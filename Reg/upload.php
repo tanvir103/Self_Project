@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_COOKIE['flag'])){
+    header('location:signin.html');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

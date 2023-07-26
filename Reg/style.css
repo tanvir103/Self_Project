@@ -1,0 +1,32 @@
+body {
+    background-color:antiquewhite;
+  }
+  
+  h1 {
+    color: navy;
+    margin-left: 20px;
+  }
+  input[type=submit] {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  input[type=submit]:hover {
+    background-color: red;
+    border:0cqmin;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+    #dashboard{
+    background-color: azure;
+  }
+ 
+  

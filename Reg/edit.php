@@ -1,7 +1,9 @@
 <?php
-
     session_start();
-
+    if(!isset($_COOKIE['flag'])){
+        header('location:signin.html');
+    }
+    
 ?>
 
 <!DOCTYPE html>
