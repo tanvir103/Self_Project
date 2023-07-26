@@ -23,11 +23,16 @@
     }
     input[type=submit]{
         background-color: black;
-        color: red;
+        color: rgb(255, 255, 255);
         font-family: 'Times New Roman', Times, serif;
         font-size: 150%;
         
     }
+    #new{
+        color: cadetblue;
+        font-style: italic;
+    }
+    a:link { text-decoration: none; }
 </style>
 <body>
     <center>
@@ -39,8 +44,8 @@
                 <tr><td>Email: </td><td><input type="text"name="email" required></td></tr>
                 <tr><td>Password: </td><td><input type="password"name="password" required></td></tr>
                 <tr><td>Don't have account</td><td><a href="registration.php"> Create one?</a></td></tr>
-                <tr><td><input type="checkbox" name="Remember" value="a"> Remember Me</td></tr>
-                <tr><td><input type="submit" name="submit" value="SignIn"></td></tr>
+                <tr><td><input id="new" type="checkbox" name="Remember" value="a"> Remember Me</td></tr>
+                <tr><td><input  type="submit" name="submit" value="SignIn"></td></tr>
             </table>
         </form>
     </div>
