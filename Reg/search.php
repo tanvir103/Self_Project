@@ -1,21 +1,22 @@
 <?php
+$json= $_REQUEST['name'];
+$user=json_decode($json);
+
 function search($value){
     $conn=mysqli_connect('localhost','root','','projecttask');
     $sql="SELECT * FROM userinfo WHERE fullname LIKE '%$value%'";
     $result=mysqli_query($conn,$sql);
     return $result;
 }
-if(isset($_POST['search'])){
-    $value=$_POST['livesearch'];
-    $row=search($value);
+
+    
+    $row=search($user);
     if(mysqli_num_rows($row) > 0) {
-        while($crow = mysqli_fetch_assoc($row)) {
-        $cid = $crow['fullname'];
-        $posterURL = $crow['password'];
-        echo "$cid "."$posterURL";
-        echo"<br>";
+        while($user = mysqli_fetch_assoc($row)) {
+            echo json_encode($user);
         }
     }
     
-}
+
+
 ?>
