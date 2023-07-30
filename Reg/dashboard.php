@@ -20,7 +20,9 @@
             <tr><td><a href="view.php">View Profile Information</a></td></tr>
             <tr><td><a href="edit.php">Edit Profile Information</a></td></tr>
             <tr><td><a href="upload.php">Upload Profile Picture</a></td></tr>
+            <tr><td><a href="userinfo.html">View All User</a></td></tr>
             <tr><td><a href="search.html"><button>Search</button></a></td></tr>
+           
         </tr>
         </table>
     </fieldset>
