@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registraion</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Add</legend>
+        <form method=post>
+            <table>
+                <tr>
+                    <td>Fullname: </td>
+                    <td><input id="fullname" type="text" name="fullname" required></td>
+                </tr>
+                <tr><td>Username: </td>
+                <td><input type="text" id="username" name="username" required></td>
+            </tr>
+            <tr><td>Country: </td><td><input id="country" type="text"name="country" required></td></tr>
+            <tr><td>Phone Number:</td><td><input id="phonenumber" type="number" name="phonenumber" required></td></tr>
+            <tr><td>Gender: </td><td><select id="gender" name="gender" >
+                <option value="Male">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select></td></tr>
+            <tr><td>Email: </td><td><input id="email" type="text"name="email" required></td></tr>
+            <tr><td>Date of Birth: </td><td><input type="date"name="dob" id="dob" required></td></tr>
+            <tr><td>Password: </td><td><input type="password"name="password" id="password" required></td></tr>
+            <tr><td>Re-enter Password: </td><td><input type="password" id="repassword" name="repassword" required></td></tr>
+            <tr><td><input type="checkbox" name="terms" required> I accept the terms and conditions</td></tr>
+            <tr><td><input onclick="add()" type="submit" name="submit" value="Create Account"></td></tr>
+            <tr><td><h5 id="message"></h5></td></tr>
+            <tr><td><h5 id="message1"></h5></td></tr>   
+            <tr><td><h5 id="message2"></h5></td></tr>   
+            <tr><td><h5 id="message3"></h5></td></tr>   
+            <tr><td><h5 id="message4"></h5></td></tr>   
+
+        </table>
+        </form>
+        <script>
+            function add(){
+                let fullname = document.getElementById('fullname').value;
+                let username = document.getElementById('username').value;
+                let country = document.getElementById('country').value;
+                let phonenumber = document.getElementById('phonenumber').value;
+                let gender = document.getElementById('gender').value;
+                let email = document.getElementById('email').value;
+
+                let user =  {
+                        'fullname':fullname,
+                        'username': username,
+                        'country': country,
+                        'phonenumber': phonenumber,
+                        'gender':gender
+                    };
+                let data = JSON.stringify(user);
+
+                let xhttp = new XMLHttpRequest();
+                xhttp.open('POST', 'abc.php', true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send('json='+data);
+
+                    xhttp.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200){
+                        let user = JSON.parse(this.responseText);
+                        document.getElementById('message').innerHTML = user.fullname;
+                        document.getElementById('message1').innerHTML = user.username;
+                        document.getElementById('message2').innerHTML = user.country;
+                        document.getElementById('message3').innerHTML = user.phonenumber;
+                        document.getElementById('message4').innerHTML = user.gender;
+                        //document.getElementById('message').innerHTML = user.username;
+            }
+    }
+}
+        </script>
+    </fieldset>
+</body>
+</html>
