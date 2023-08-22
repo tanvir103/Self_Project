@@ -11,7 +11,7 @@ function search(str){
                 document.getElementById('message').innerHTML=this.responseText;
             }
 }
-function search(str){
+function searchuser(str){
     if(str==""){
         document.getElementById('message').innerHTML="No User found";
         return;
