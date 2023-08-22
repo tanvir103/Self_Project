@@ -3,6 +3,7 @@
         <title>
             search tab
         </title>
+        <script src="script.js"></script>
     </head>
     <body>
         <input type="text" name="Search" id="live" onkeyup="search(this.value)">
@@ -10,31 +11,4 @@
         <br>
         <br>
     </body>
-    <script>
-        function search(str){
-            /*let username=document.getElementById('live').value;
-            let xhttp=new XMLHttpRequest();
-            xhttp.open('post','search.php',true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send('name='+username);
-            xhttp.onreadystatechange=function(){
-                if(this.readyState == 4 && this.status == 200){
-                    document.getElementById('message').innerText=this.responseText;
-                    
-                }
-            }*/
-
-            if(str==""){
-                document.getElementById('message').innerHTML="";
-                return;
-            }
-            let xhttp=new XMLHttpRequest();
-            xhttp.open('post','search.php',true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send('name='+str);
-            xhttp.onload=function(){
-                document.getElementById('message').innerHTML=this.responseText;
-            }
-        }
-    </script>
 </html>
